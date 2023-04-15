@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="single-sidebar-widget popular-post-widget">
+    <h4 class="popular-title">Popular Posts</h4>
+    <div style="text-align: center;" class="popular-post-list">
+        {% for post in posts %}
+        <div class="single-post-list  flex-row align-items-center">
+            <div class="details">
+                <a href="{% url 'blog:single' pk=post.id %}">
+                    <h6 style="font-size: 22px;">{{post.title}}</h6>
+                </a>
+            </div>
+            <div class="thumb">
+                <img class="img-fluid" src="{{post.image.url}}" alt="" style="margin-left: 50px;padding-right: 100px">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
